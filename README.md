@@ -128,5 +128,57 @@ erDiagram
    - Backend receives the base64 strings and uploads them to **Cloudinary**.
    - Cloudinary returns secure URLs which are saved in the `Post` document.
 
-3. **Database Seeding:**
    - A `seed.js` script automatically drops the database and populates it with dummy users (Doctors, Nurses, Students) and pre-configured posts with images. It also automatically connects all seeded users together.
+
+## 🔄 Application Flow Diagram
+
+```mermaid
+graph TD
+    A[Client App - React Native] -->|Authentication| B(Firebase Auth)
+    B -->|Returns Token| A
+    A -->|API Requests + Token| C{Express Backend}
+    
+    C -->|Reads/Writes| D[(MongoDB)]
+    C -->|Uploads Images| E[Cloudinary]
+    E -->|Returns Secure URLs| C
+    
+    subgraph Client Flow
+    F[Login/Signup] --> G[OTP Verification]
+    G --> H{User Exists?}
+    H -- No --> I[Onboarding Screen]
+    H -- Yes --> J[Home Feed]
+    I --> J
+    J --> K[Create Post / View Posts]
+    J --> L[Discover Connections]
+    J --> M[Direct Messaging]
+    end
+```
+
+## 🐳 Docker Deployment
+
+The backend server and database can be easily spun up using Docker.
+
+### Prerequisites
+- [Docker](https://www.docker.com/) and Docker Compose installed.
+- A local `.env` file in the `server` directory with your Cloudinary credentials.
+
+### Running the Services
+
+From the root directory of the project, run:
+```bash
+docker-compose up --build -d
+```
+
+This command will:
+1. Spin up a **MongoDB** container (`mongo:6.0`) exposed on port `27017`.
+2. Build and spin up the **Node.js/Express Server** container exposed on port `5000`.
+
+To view logs:
+```bash
+docker-compose logs -f
+```
+
+To stop the services:
+```bash
+docker-compose down
+```
