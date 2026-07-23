@@ -1,0 +1,45 @@
+{
+  "info": {
+    "name": "Healthcare Platform - Posts",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get Home Feed",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "firebaseUid", "value": "mock_uid_1" }
+        ],
+        "url": {
+          "raw": "http://localhost:8000/api/v1/posts",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "v1", "posts"]
+        }
+      }
+    },
+    {
+      "name": "Create a Post",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "firebaseUid", "value": "mock_uid_1" },
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"content\": \"This is a test post from Postman!\",\n    \"image\": \"https://example.com/test.jpg\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/v1/posts",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "v1", "posts"]
+        }
+      }
+    }
+  ]
+}

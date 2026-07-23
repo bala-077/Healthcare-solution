@@ -1,0 +1,66 @@
+{
+  "info": {
+    "name": "Healthcare Platform - Chats",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get Chat History",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "firebaseUid", "value": "mock_uid_1" }
+        ],
+        "url": {
+          "raw": "http://localhost:8000/api/v1/chats/<RECEIVER_ID_HERE>",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "v1", "chats", "<RECEIVER_ID_HERE>"]
+        }
+      }
+    },
+    {
+      "name": "Send a Message",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "firebaseUid", "value": "mock_uid_1" },
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"receiverId\": \"<RECEIVER_ID_HERE>\",\n    \"message\": \"Hey, how are you?\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/v1/chats",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "v1", "chats"]
+        }
+      }
+    },
+    {
+      "name": "Share a Post",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "firebaseUid", "value": "mock_uid_1" },
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"receiverId\": \"<RECEIVER_ID_HERE>\",\n    \"sharedPostId\": \"<POST_ID_HERE>\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/v1/chats",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "v1", "chats"]
+        }
+      }
+    }
+  ]
+}

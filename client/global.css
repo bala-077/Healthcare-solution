@@ -1,0 +1,49 @@
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/preflight.css" layer(base);
+@import "tailwindcss/utilities.css";
+
+@import "nativewind/theme";
+
+@theme {
+  --color-primary: #02B6B6;
+  --color-primary-dark: #027878;
+  --color-primary-light: #F1FAFA;
+
+  --color-text-primary: #29292B;
+  --color-text-secondary: #7F7F80;
+
+  --color-border: #EEEEEF;
+
+  --color-background-light: #F8F8F9;
+  --color-surface-warm: #F0F0E8;
+  --color-surface-cream: #F5F5F0;
+
+  --font-sans: 'DMSans_400Regular';
+  --font-sans-medium: 'DMSans_500Medium';
+  --font-sans-bold: 'DMSans_700Bold';
+}
+
+@utility h1-header {
+  font-family: var(--font-sans-bold);
+  font-size: 24px;
+}
+@utility h2-sub-header {
+  font-family: var(--font-sans-bold);
+  font-size: 20px;
+}
+@utility h3-title {
+  font-family: var(--font-sans-bold);
+  font-size: 16px;
+}
+@utility b1-body {
+  font-family: var(--font-sans-medium);
+  font-size: 16px;
+}
+@utility b2-body {
+  font-family: var(--font-sans);
+  font-size: 14px;
+}
+@utility cta-text {
+  font-family: var(--font-sans-bold);
+  font-size: 16px;
+}

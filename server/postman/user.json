@@ -1,0 +1,82 @@
+{
+  "info": {
+    "name": "Healthcare Platform - Users",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get Current User Profile",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "firebaseUid", "value": "mock_uid_1" }
+        ],
+        "url": {
+          "raw": "http://localhost:8000/api/v1/users/me",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "v1", "users", "me"]
+        }
+      }
+    },
+    {
+      "name": "Discover Users",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "firebaseUid", "value": "mock_uid_1" }
+        ],
+        "url": {
+          "raw": "http://localhost:8000/api/v1/users/discover",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "v1", "users", "discover"]
+        }
+      }
+    },
+    {
+      "name": "Send Connection Request",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "firebaseUid", "value": "mock_uid_1" },
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"receiverId\": \"<USER_ID_HERE>\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/v1/users/connect",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "v1", "users", "connect"]
+        }
+      }
+    },
+    {
+      "name": "Accept Connection Request",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "firebaseUid", "value": "mock_uid_2" },
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"senderId\": \"<SENDER_USER_ID_HERE>\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/v1/users/connect/accept",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "v1", "users", "connect", "accept"]
+        }
+      }
+    }
+  ]
+}
