@@ -3,7 +3,7 @@ import { storage } from './storage';
 import { Platform } from 'react-native';
 
 // User's Local IP address for physical device Expo Go testing
-const BASE_URL = 'http://192.168.1.29:5000/api';
+const BASE_URL = 'https://healthcare-solution-1.onrender.com/api';
 
 export const apiClient = axios.create({
   baseURL: BASE_URL,

@@ -3,7 +3,7 @@ import { storage } from './storage';
 import { Platform } from 'react-native';
 
 // User's Local IP address for physical device Expo Go testing
-const SOCKET_URL = 'http://192.168.1.29:5000';
+const SOCKET_URL = 'https://healthcare-solution-1.onrender.com';
 
 class SocketService {
   public socket: Socket | null = null;
