@@ -35,6 +35,9 @@ app.use(cookieParser());
 // );
 
 // --- routes
+app.get('/', (req, res) => {
+    res.send('Hello World from healthcare server!');
+});
 app.use('/api', routes);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
