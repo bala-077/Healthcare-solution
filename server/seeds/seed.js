@@ -1,3 +1,7 @@
+const crypto = require('crypto');
+if (!global.crypto) {
+  global.crypto = crypto.webcrypto || crypto;
+}
 require('dotenv').config({ path: '../.env' });
 const mongoose = require('mongoose');
 const User = require('../src/model/User');
